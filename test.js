@@ -1,12 +1,12 @@
 const axios = require('axios');
 
-async function hiGoogle(name) {
-  const greeting = 'Hello ' + name;
+async function hiGoogle() {
   const response = await axios.get('http://google.com');
-  console.log(response);
-  console.log(greeting);
-  return greeting + response;
+  return response;
 }
 
-// console.log(hiGoogle('finn'));
-hiGoogle('Finn')
+async function consLog(asFun) {
+  const result = await asFun();
+  console.log(result);
+}
+consLog(hiGoogle);
